@@ -17,7 +17,8 @@
                         <form method="POST" action="{{ route('tutores.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('tutore.form')
+                            <input type="file" name="import_file" />
+                            <button class="btn btn-primary" type="submit">Importar</button>
 
                         </form>
                     </div>

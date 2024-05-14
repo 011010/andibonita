@@ -12,7 +12,7 @@
       <nav class="main-menu">
         <div>
             <img  src="images/logoi.png" alt="" style="width: 100px; height:100px; margin-left: 50px;">
-            <h1>TUTOREAME <br> TUTOR</h1>
+            <h1>TUTOREAME <br> TORJSJSJSJ</h1>
             
         </div>
         <img class="logo" src="" alt="" />

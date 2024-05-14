@@ -11,15 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('tutorados', function (Blueprint $table) {
             $table->id();
+            $table->string('semestre');
+            $table->string('grupo');
+            $table->string('carrera');
+            $table->string('numerocontrol');
             $table->string('nombre');
             $table->string('a_paterno');
             $table->string('a_materno');
-            $table->string('correo_electronico')->unique();
+            $table->string('correoelectronico')->unique();
             $table->string('contraseña');
-            $table->unsignedBigInteger('rol_id'); // Clave foránea de la tabla roles
-            $table->foreign('rol_id')->references('id')->on('roles');
+            $table->string('role')->default('tutorado');
+            $table->unsignedBigInteger('tutor_id')->nullable(); // Puede ser nulo
+            $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('tutorados');
     }
 };

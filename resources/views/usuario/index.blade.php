@@ -36,12 +36,15 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Nombre</th>
+									<th >Imagendeperfil</th>
+									<th >Nombres</th>
 									<th >A Paterno</th>
 									<th >A Materno</th>
-									<th >Correo Electronico</th>
+									<th >Teléfono</th>
+									<th >Perfil</th>
+									<th >Correoelectronico</th>
 									<th >Contraseña</th>
-									<th >Rol Id</th>
+									<th >Role</th>
 
                                         <th></th>
                                     </tr>
@@ -51,12 +54,15 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $usuario->nombre }}</td>
+										<td >{{ $usuario->imagendeperfil }}</td>
+										<td >{{ $usuario->nombres }}</td>
 										<td >{{ $usuario->a_paterno }}</td>
 										<td >{{ $usuario->a_materno }}</td>
-										<td >{{ $usuario->correo_electronico }}</td>
+										<td >{{ $usuario->teléfono }}</td>
+										<td >{{ $usuario->perfil }}</td>
+										<td >{{ $usuario->correoelectronico }}</td>
 										<td >{{ $usuario->contraseña }}</td>
-										<td >{{ $usuario->rol_id }}</td>
+										<td >{{ $usuario->role }}</td>
 
                                             <td>
                                                 <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $tutore->name ?? __('Show') . " " . __('Tutore') }}
+    {{ $tutorado->name ?? __('Show') . " " . __('Tutorado') }}
 @endsection
 
 @section('content')
@@ -11,54 +11,58 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Tutore</span>
+                            <span class="card-title">{{ __('Show') }} Tutorado</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('tutores.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('tutorados.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Imagendeperfil:</strong>
-                                    {{ $tutore->imagendeperfil }}
+                                    <strong>Semestre:</strong>
+                                    {{ $tutorado->semestre }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Nombres:</strong>
-                                    {{ $tutore->nombres }}
+                                    <strong>Grupo:</strong>
+                                    {{ $tutorado->grupo }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Carrera:</strong>
+                                    {{ $tutorado->carrera }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Numerocontrol:</strong>
+                                    {{ $tutorado->numerocontrol }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Nombre:</strong>
+                                    {{ $tutorado->nombre }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>A Paterno:</strong>
-                                    {{ $tutore->a_paterno }}
+                                    {{ $tutorado->a_paterno }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>A Materno:</strong>
-                                    {{ $tutore->a_materno }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Division:</strong>
-                                    {{ $tutore->division }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Teléfono:</strong>
-                                    {{ $tutore->teléfono }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Perfil:</strong>
-                                    {{ $tutore->perfil }}
+                                    {{ $tutorado->a_materno }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Correoelectronico:</strong>
-                                    {{ $tutore->correoelectronico }}
+                                    {{ $tutorado->correoelectronico }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Contraseña:</strong>
-                                    {{ $tutore->contraseña }}
+                                    {{ $tutorado->contraseña }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Role:</strong>
-                                    {{ $tutore->role }}
+                                    {{ $tutorado->role }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Tutor asignado:</strong>
+                                    {{ $tutorado->tutor_id }}
                                 </div>
 
                     </div>

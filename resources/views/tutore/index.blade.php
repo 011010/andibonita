@@ -36,12 +36,16 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Division</th>
-									<th >Nombre</th>
+									<th >Imagendeperfil</th>
+									<th >Nombres</th>
 									<th >A Paterno</th>
 									<th >A Materno</th>
-									<th >Correo Electronico</th>
+									<th >Division</th>
+									<th >Teléfono</th>
+									<th >Perfil</th>
+									<th >Correoelectronico</th>
 									<th >Contraseña</th>
+									<th >Role</th>
 
                                         <th></th>
                                     </tr>
@@ -51,12 +55,16 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $tutore->division }}</td>
-										<td >{{ $tutore->nombre }}</td>
+										<td >{{ $tutore->imagendeperfil }}</td>
+										<td >{{ $tutore->nombres }}</td>
 										<td >{{ $tutore->a_paterno }}</td>
 										<td >{{ $tutore->a_materno }}</td>
-										<td >{{ $tutore->correo_electronico }}</td>
+										<td >{{ $tutore->division }}</td>
+										<td >{{ $tutore->teléfono }}</td>
+										<td >{{ $tutore->perfil }}</td>
+										<td >{{ $tutore->correoelectronico }}</td>
 										<td >{{ $tutore->contraseña }}</td>
+										<td >{{ $tutore->role }}</td>
 
                                             <td>
                                                 <form action="{{ route('tutores.destroy', $tutore->id) }}" method="POST">

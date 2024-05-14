@@ -21,8 +21,12 @@
                     <div class="card-body bg-white">
                         
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Nombre:</strong>
-                                    {{ $usuario->nombre }}
+                                    <strong>Imagendeperfil:</strong>
+                                    {{ $usuario->imagendeperfil }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Nombres:</strong>
+                                    {{ $usuario->nombres }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>A Paterno:</strong>
@@ -33,16 +37,24 @@
                                     {{ $usuario->a_materno }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Correo Electronico:</strong>
-                                    {{ $usuario->correo_electronico }}
+                                    <strong>Teléfono:</strong>
+                                    {{ $usuario->teléfono }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Perfil:</strong>
+                                    {{ $usuario->perfil }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
+                                    <strong>Correoelectronico:</strong>
+                                    {{ $usuario->correoelectronico }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Contraseña:</strong>
                                     {{ $usuario->contraseña }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Rol Id:</strong>
-                                    {{ $usuario->rol_id }}
+                                    <strong>Role:</strong>
+                                    {{ $usuario->role }}
                                 </div>
 
                     </div>

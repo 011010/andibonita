@@ -47,7 +47,7 @@ body{
    
 }
 
-.container button{
+.container  .al{
     background-color: #d85007;
     color: #fff;
     font-size: 18px;
@@ -61,7 +61,7 @@ body{
     cursor: pointer;
 }
 
-.container button.hidden{
+.container .al.hidden{
     background-color: transparent;
     border-color: #fff;
 }

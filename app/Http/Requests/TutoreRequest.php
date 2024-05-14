@@ -22,12 +22,16 @@ class TutoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'division' => 'required|string',
-			'nombre' => 'required|string',
+			'imagendeperfil' => 'string',
+			'nombres' => 'required|string',
 			'a_paterno' => 'required|string',
 			'a_materno' => 'required|string',
-			'correo_electronico' => 'required|string',
+			'division' => 'required|string',
+			'teléfono' => 'required|string',
+			'perfil' => 'required|string',
+			'correoelectronico' => 'required|string',
 			'contraseña' => 'required|string',
+			'role' => 'required|string',
         ];
     }
 }

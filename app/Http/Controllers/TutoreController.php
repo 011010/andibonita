@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\TutoreRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\TutoresImport;
 class TutoreController extends Controller
 {
     /**
@@ -35,9 +36,13 @@ class TutoreController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TutoreRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        Tutore::create($request->validated());
+       
+        $file=$request->file('import_file');
+
+        Excel::import(new TutoresImport , $file);
+
 
         return Redirect::route('tutores.index')
             ->with('success', 'Tutore created successfully.');

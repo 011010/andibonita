@@ -2,9 +2,14 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="nombre" class="form-label">{{ __('Nombre') }}</label>
-            <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $usuario?->nombre) }}" id="nombre" placeholder="Nombre">
-            {!! $errors->first('nombre', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="imagendeperfil" class="form-label">{{ __('Imagendeperfil') }}</label>
+            <input type="text" name="imagendeperfil" class="form-control @error('imagendeperfil') is-invalid @enderror" value="{{ old('imagendeperfil', $usuario?->imagendeperfil) }}" id="imagendeperfil" placeholder="Imagendeperfil">
+            {!! $errors->first('imagendeperfil', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="nombres" class="form-label">{{ __('Nombres') }}</label>
+            <input type="text" name="nombres" class="form-control @error('nombres') is-invalid @enderror" value="{{ old('nombres', $usuario?->nombres) }}" id="nombres" placeholder="Nombres">
+            {!! $errors->first('nombres', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="a_paterno" class="form-label">{{ __('A Paterno') }}</label>
@@ -17,9 +22,19 @@
             {!! $errors->first('a_materno', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="correo_electronico" class="form-label">{{ __('Correo Electronico') }}</label>
-            <input type="text" name="correo_electronico" class="form-control @error('correo_electronico') is-invalid @enderror" value="{{ old('correo_electronico', $usuario?->correo_electronico) }}" id="correo_electronico" placeholder="Correo Electronico">
-            {!! $errors->first('correo_electronico', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="teléfono" class="form-label">{{ __('Teléfono') }}</label>
+            <input type="text" name="teléfono" class="form-control @error('teléfono') is-invalid @enderror" value="{{ old('teléfono', $usuario?->teléfono) }}" id="teléfono" placeholder="Teléfono">
+            {!! $errors->first('teléfono', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="perfil" class="form-label">{{ __('Perfil') }}</label>
+            <input type="text" name="perfil" class="form-control @error('perfil') is-invalid @enderror" value="{{ old('perfil', $usuario?->perfil) }}" id="perfil" placeholder="Perfil">
+            {!! $errors->first('perfil', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="correoelectronico" class="form-label">{{ __('Correoelectronico') }}</label>
+            <input type="text" name="correoelectronico" class="form-control @error('correoelectronico') is-invalid @enderror" value="{{ old('correoelectronico', $usuario?->correoelectronico) }}" id="correoelectronico" placeholder="Correoelectronico">
+            {!! $errors->first('correoelectronico', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="contraseña" class="form-label">{{ __('Contraseña') }}</label>
@@ -27,9 +42,9 @@
             {!! $errors->first('contraseña', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="rol_id" class="form-label">{{ __('Rol Id') }}</label>
-            <input type="text" name="rol_id" class="form-control @error('rol_id') is-invalid @enderror" value="{{ old('rol_id', $usuario?->rol_id) }}" id="rol_id" placeholder="Rol Id">
-            {!! $errors->first('rol_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="role" class="form-label">{{ __('Role') }}</label>
+            <input type="text" name="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role', $usuario?->role) }}" id="role" placeholder="Role">
+            {!! $errors->first('role', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
     </div>

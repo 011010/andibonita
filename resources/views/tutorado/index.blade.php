@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Alumnosus
+    Tutorados
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Alumnosus') }}
+                                {{ __('Tutorados') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('alumnosus.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('tutorados.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,24 +36,42 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Alumno Id</th>
-									<th >Tutor Id</th>
+									<th >Semestre</th>
+									<th >Grupo</th>
+									<th >Carrera</th>
+									<th >Numerocontrol</th>
+									<th >Nombre</th>
+									<th >A Paterno</th>
+									<th >A Materno</th>
+									<th >Correoelectronico</th>
+									<th >Contraseña</th>
+									<th >Role</th>
+									<th >Asignar Tutor</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($alumnosus as $alumnosu)
+                                    @foreach ($tutorados as $tutorado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $alumnosu->alumno_id }}</td>
-										<td >{{ $alumnosu->tutor_id }}</td>
+										<td >{{ $tutorado->semestre }}</td>
+										<td >{{ $tutorado->grupo }}</td>
+										<td >{{ $tutorado->carrera }}</td>
+										<td >{{ $tutorado->numerocontrol }}</td>
+										<td >{{ $tutorado->nombre }}</td>
+										<td >{{ $tutorado->a_paterno }}</td>
+										<td >{{ $tutorado->a_materno }}</td>
+										<td >{{ $tutorado->correoelectronico }}</td>
+										<td >{{ $tutorado->contraseña }}</td>
+										<td >{{ $tutorado->role }}</td>
+										<td >{{ $tutorado->tutor_id }}</td>
 
                                             <td>
-                                                <form action="{{ route('alumnosus.destroy', $alumnosu->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('alumnosus.show', $alumnosu->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('alumnosus.edit', $alumnosu->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('tutorados.destroy', $tutorado->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('tutorados.show', $tutorado->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('tutorados.edit', $tutorado->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -66,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $alumnosus->withQueryString()->links() !!}
+                {!! $tutorados->withQueryString()->links() !!}
             </div>
         </div>
     </div>

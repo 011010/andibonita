@@ -22,12 +22,15 @@ class UsuarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'nombre' => 'required|string',
-			'a_paterno' => 'required|string',
-			'a_materno' => 'required|string',
-			'correo_electronico' => 'required|string',
+			'imagendeperfil' => 'nullable|string',
+			'nombres' => 'nullable|string',
+			'a_paterno' => 'nullable|string',
+			'a_materno' => 'nullable|string',
+			'teléfono' => 'nullable|string',
+			'perfil' => 'nullable|string',
+			'correoelectronico' => 'required|string',
 			'contraseña' => 'required|string',
-			'rol_id' => 'required',
+			'role' => 'required|string',
         ];
     }
 }
