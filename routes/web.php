@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InvitadoController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormularioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,13 +41,18 @@ Route::get('/welcomeinvitado', function () {
 
 Route::get('/welcome', function () {
     return view('welcome');
-})->name('welcome')->middleware('role:admin');
+})->name('welcome');
 
 Route::get('/welcomeinvitado', function () {
     return view('welcomeinvitado');
 })->name('welcomeinvitado')->middleware('role:invitado');
 
+Route::get('formulario', function () {
+    return view('formulario');
+});
 
+Route::post('/calendario', [FormularioController::class, 'store']);
+ 
 Route::get('/', function () {
     return view('Iniciar');
 })->name('login');
