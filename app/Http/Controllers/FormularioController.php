@@ -5,7 +5,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Formulario;
+use App\Models\calendario;
 
 
 class FormularioController extends Controller
@@ -32,7 +32,7 @@ class FormularioController extends Controller
             'copias_actas' => 'nullable|date',
         ]);
 
-        Formulario::create($validated);
+        calendario::create($validated);
 
         return redirect()->back()->with('success', 'Datos guardados exitosamente');
     }

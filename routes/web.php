@@ -47,7 +47,7 @@ Route::get('/welcomeinvitado', function () {
     return view('welcomeinvitado');
 })->name('welcomeinvitado')->middleware('role:invitado');
 
-Route::get('formulario', function () {
+Route::get('/formulario', function () {
     return view('formulario');
 });
 
