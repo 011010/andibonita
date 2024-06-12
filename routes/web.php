@@ -8,7 +8,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InvitadoController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormularioController;
+use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\ReacController;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,20 +43,9 @@ Route::get('/welcomeinvitado', function () {
     return view('welcomeinvitado');
 })->name('welcomeinvitado');
 
-
-Route::get('/welcome', function () {
-    return view('welcome');
-})->name('welcome');
-
 Route::get('/welcomeinvitado', function () {
     return view('welcomeinvitado');
 })->name('welcomeinvitado')->middleware('role:invitado');
-
-Route::get('/formulario', function () {
-    return view('formulario');
-});
-
-Route::post('/calendario', [FormularioController::class, 'store']);
  
 Route::get('/', function () {
     return view('Iniciar');
@@ -66,6 +60,22 @@ Route::get('registraral', function () {
 Route::get('tutores', function () {
     return view('tutores');
 });
+Route::get('formulario', function () {
+    return view('formulario');
+});
+
+Route::get('/reac', function () {
+    return view('reac');
+});
+
+Route::get('/reac/create', [ReacController::class, 'create']);
+Route::post('/reac/store', [ReacController::class, 'store']);
+
+Route::post('/calendarios', [CalendarioController::class, 'store']);
+Route::get('/calendarios/{id}/pdf', [CalendarioController::class, 'generatePDF'])->name('calendario.pdf');
+
+Route::post('/calendario', [CalendarioController::class, 'store']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/login', [LoginController::class, 'login']);
 

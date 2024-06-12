@@ -1,15 +1,14 @@
 <?php
 
-// app/Http/Controllers/FormularioController.php
+// app/Http/Controllers/CalendarioController.php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Calendario;
-use PDF;
+use Mpdf\Mpdf;
 
-
-class FormularioController extends Controller
+class CalendarioController extends Controller
 {
     public function store(Request $request)
     {
@@ -33,18 +32,20 @@ class FormularioController extends Controller
             'copias_actas' => 'nullable|date',
         ]);
 
-        Calendario::create($validated);
+        $calendario = Calendario::create($validated);
 
-        return redirect()->back()->with('success', 'Datos guardados exitosamente');
+        return redirect()->route('calendario.pdf', $calendario->id);
     }
 
-    public function generatePDF(Request $request)
+    public function generatePDF($id)
     {
-        $data = $request->all();
+        $calendario = Calendario::findOrFail($id);
+        $html = view('pdf_template', compact('calendario'))->render();
 
-        $pdf = PDF::loadView('pdf_template', $data);
-
-        return $pdf->download('calendario.pdf');
+        $mpdf = new Mpdf();
+        $mpdf->WriteHTML($html);
+        
+        return $mpdf->Output('calendario.pdf', 'D');
     }
 }
 

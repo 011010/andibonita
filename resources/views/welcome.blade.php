@@ -56,9 +56,9 @@
           <li class="nav-item">
             <b></b>
             <b></b>
-            <a href="#">
+            <a href="formulario">
               <i class="fa fa-person-running nav-icon"></i>
-              <span class="nav-text">Reportes</span>
+              <span class="nav-text">Calendario</span>
             </a>
           </li>
 

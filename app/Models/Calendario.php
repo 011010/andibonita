@@ -1,11 +1,13 @@
 <?php
 
+// app/Models/Calendario.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class calendario extends Model
+class Calendario extends Model
 {
     use HasFactory;
 
@@ -17,4 +19,3 @@ class calendario extends Model
         'reporte_semestral', 'copias_actas'
     ];
 }
-
