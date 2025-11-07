@@ -112,15 +112,10 @@ Route::middleware(['auth'])->group(function () {
     | Módulo de Calendario de Tutorías
     |--------------------------------------------------------------------------
     */
-    // Vista del formulario de calendario
-    Route::get('/formulario', function () {
-        return view('formulario');
-    })->name('calendario.form');
+    // Rutas RESTful completas para Calendario
+    Route::resource('calendario', CalendarioController::class);
 
-    // Guardar calendario (ruta consolidada)
-    Route::post('/calendario', [CalendarioController::class, 'store'])->name('calendario.store');
-
-    // Generar PDF del calendario
+    // Ruta personalizada para generar PDF del calendario
     Route::get('/calendario/{id}/pdf', [CalendarioController::class, 'generatePDF'])->name('calendario.pdf');
 
 });
